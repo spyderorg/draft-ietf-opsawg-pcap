@@ -5,7 +5,7 @@
 Network Working Group                                     M. Tuexen, Ed.
 Internet-Draft                          Muenster Univ. of Appl. Sciences
 Intended status: Informational                                  F. Risso
-Expires: 26 May 2024                               Politecnico di Torino
+Expires: 28 June 2024                              Politecnico di Torino
                                                              J. Bongertz
                                                  Airbus DS CyberSecurity
                                                                 G. Combs
@@ -16,7 +16,7 @@ Expires: 26 May 2024                               Politecnico di Torino
                                                                  Red Hat
                                                            M. Richardson
                                                                Sandelman
-                                                        23 November 2023
+                                                        26 December 2023
 
 
            PCAP Next Generation (pcapng) Capture File Format
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 May 2024.
+   This Internet-Draft will expire on 28 June 2024.
 
 Copyright Notice
 
@@ -693,7 +693,7 @@ Table of Contents
       2.  This value is palindromic, so that the reader is able to
           recognize the Section Header Block regardless of the
           endianness of the section.  The endianness is recognized by
-          reading the Byte Order Magic, which is located 8 octets after
+          reading the Byte-Order Magic, which is located 8 octets after
           the Block Type.
 
    *  Block Total Length: total size of this block, as described in
@@ -1941,7 +1941,7 @@ Table of Contents
 
               -  'key': AES key
 
-              -  'siglen': signature length in bytes.  This depends on
+              -  'siglen': signature length in octets.  This depends on
                  the used security policy.
 
            *  Secure Channel ID: Encoded as decimal value.
@@ -1959,15 +1959,15 @@ Table of Contents
 
            *  AES-128-CBC:
 
-              -  IV Length: 16 bytes
+              -  IV Length: 16 octets
 
-              -  Key Length: 16 bytes
+              -  Key Length: 16 octets
 
            *  AES-256-CBC:
 
-              -  IV Length: 16 bytes
+              -  IV Length: 16 octets
 
-              -  Key Length: 32 bytes
+              -  Key Length: 32 octets
 
            More details on OPC UA Security can be found in the OPC UA
            Specification Part 6 - Mappings (https://opcfoundation.org/
@@ -1979,7 +1979,7 @@ Table of Contents
 
    0x57474b4c:
            WireGuard Key Log. Every line consists of the key type,
-           equals sign ('='), and the base64-encoded 32-byte key with
+           equals sign ('='), and the base64-encoded 32-octet key with
            optional spaces before and in between.  The key type is one
            of LOCAL_STATIC_PRIVATE_KEY, REMOTE_STATIC_PUBLIC_KEY,
            LOCAL_EPHEMERAL_PRIVATE_KEY, or PRESHARED|_KEY.  This matches
@@ -2269,12 +2269,13 @@ Table of Contents
    On Windows and macOS, files are distinguished by an extension to
    their filename.  Such an extension is technically not actually
    required, as applications should be able to automatically detect the
-   pcapng file format through the "magic bytes" at the beginning of the
-   file, as some other UN*X desktop environments do.  However, using
-   name extensions makes it easier to work with files (e.g. visually
-   distinguish file formats) so it is recommended - though not required
-   - to use .pcapng as the name extension for files following this
-   specification.
+   pcapng file format through the Block Type and Byte-Order Magic fields
+   in the Secton Header Block at the beginning of the file, as some
+   desktop environments other than those of Windows and macOS do.
+   However, using name extensions makes it easier to work with files
+   (e.g. visually distinguish file formats) so it is recommended -
+   though not required - to use .pcapng as the name extension for files
+   following this specification.
 
    Please note: To avoid confusion (such as the current usage of .cap
    for a plethora of different capture file formats) file name
