@@ -507,7 +507,7 @@ Table of Contents
    |                                     |        |transport layer;    |
    |                                     |        |the frame contains  |
    |                                     |        |an HCI packet       |
-   |                                     |        |indicator byte, as  |
+   |                                     |        |indicator octet, as |
    |                                     |        |specified by the    |
    |                                     |        |UART Transport      |
    |                                     |        |Layer portion of    |
@@ -542,7 +542,7 @@ Table of Contents
    |                                     |        |usbmon.txt file in  |
    |                                     |        |the Linux source    |
    |                                     |        |tree.  Only the     |
-   |                                     |        |first 48 bytes of   |
+   |                                     |        |first 48 octets of  |
    |                                     |        |that header are     |
    |                                     |        |present.  All       |
    |                                     |        |fields in the       |
@@ -630,7 +630,7 @@ Table of Contents
    +-------------------------------------+--------+--------------------+
    | LINKTYPE_IPMB_KONTRON               |  199   |Reserved for IPMB   |
    |                                     |        |packet for IPMI,    |
-   |                                     |        |with a 2-byte       |
+   |                                     |        |with a 2-octet      |
    |                                     |        |header              |
    +-------------------------------------+--------+--------------------+
    | LINKTYPE_JUNIPER_ST                 |  200   |Reserved for        |
@@ -639,7 +639,7 @@ Table of Contents
    | LINKTYPE_BLUETOOTH_HCI_H4_WITH_PHDR |  201   |Bluetooth HCI UART  |
    |                                     |        |transport layer;    |
    |                                     |        |the frame contains  |
-   |                                     |        |a 4-byte direction  |
+   |                                     |        |a 4-octet direction |
    |                                     |        |field, in network   |
    |                                     |        |byte order (big-    |
    |                                     |        |endian), the low-   |
@@ -654,7 +654,7 @@ Table of Contents
    |                                     |        |controller,         |
    |                                     |        |followed by an HCI  |
    |                                     |        |packet indicator    |
-   |                                     |        |byte, as specified  |
+   |                                     |        |octet, as specified |
    |                                     |        |by the UART         |
    |                                     |        |Transport Layer     |
    |                                     |        |portion of the most |
@@ -674,7 +674,7 @@ Table of Contents
    |                                     |        |Core Specification. |
    +-------------------------------------+--------+--------------------+
    | LINKTYPE_AX25_KISS                  |  202   |AX.25 packet, with  |
-   |                                     |        |a 1-byte KISS       |
+   |                                     |        |a 1-octet KISS      |
    |                                     |        |header containing a |
    |                                     |        |type indicator.     |
    +-------------------------------------+--------+--------------------+
@@ -694,20 +694,20 @@ Table of Contents
    | LINKTYPE_PPP_WITH_DIR               |  204   |PPP, as per RFC     |
    |                                     |        |1661 and RFC 1662 , |
    |                                     |        |preceded with a     |
-   |                                     |        |one-byte pseudo-    |
+   |                                     |        |one-octet pseudo-   |
    |                                     |        |header with a zero  |
    |                                     |        |value meaning       |
    |                                     |        |received by this    |
    |                                     |        |host and a non-zero |
    |                                     |        |value meaning sent  |
    |                                     |        |by this host; if    |
-   |                                     |        |the first 2 bytes   |
+   |                                     |        |the first 2 octets  |
    |                                     |        |are 0xff and 0x03,  |
    |                                     |        |it's PPP in HDLC-   |
    |                                     |        |like framing, with  |
    |                                     |        |the PPP header      |
    |                                     |        |following those two |
-   |                                     |        |bytes, otherwise    |
+   |                                     |        |octets, otherwise   |
    |                                     |        |it's PPP without    |
    |                                     |        |framing, and the    |
    |                                     |        |packet begins with  |
@@ -721,7 +721,7 @@ Table of Contents
    |                                     |        |framing, as per     |
    |                                     |        |section 4.3.1 of    |
    |                                     |        |RFC 1547 , preceded |
-   |                                     |        |with a one-byte     |
+   |                                     |        |with a one-octet    |
    |                                     |        |pseudo-header with  |
    |                                     |        |a zero value        |
    |                                     |        |meaning received by |
@@ -732,7 +732,7 @@ Table of Contents
    +-------------------------------------+--------+--------------------+
    | LINKTYPE_FRELAY_WITH_DIR            |  206   |Frame Relay LAPF    |
    |                                     |        |frames, beginning   |
-   |                                     |        |with a one-byte     |
+   |                                     |        |with a one-octet    |
    |                                     |        |pseudo-header with  |
    |                                     |        |a zero value        |
    |                                     |        |meaning received by |
@@ -758,7 +758,7 @@ Table of Contents
    |                                     |        |specified by ITU-T  |
    |                                     |        |Recommendation X.25 |
    |                                     |        |, preceded with a   |
-   |                                     |        |one-byte pseudo-    |
+   |                                     |        |one-octet pseudo-   |
    |                                     |        |header with a zero  |
    |                                     |        |value meaning       |
    |                                     |        |received by this    |
@@ -845,10 +845,10 @@ Table of Contents
    |                                     |        |Documentation/usb/  |
    |                                     |        |usbmon.txt file in  |
    |                                     |        |the Linux source    |
-   |                                     |        |tree.  All 64 bytes |
-   |                                     |        |of the header are   |
-   |                                     |        |present.  All       |
-   |                                     |        |fields in the       |
+   |                                     |        |tree.  All 64       |
+   |                                     |        |octets of the       |
+   |                                     |        |header are present. |
+   |                                     |        |All fields in the   |
    |                                     |        |header are in host  |
    |                                     |        |byte order.  When   |
    |                                     |        |performing a live   |
@@ -912,14 +912,14 @@ Table of Contents
    |                                     |        |SOF.  The encodings |
    |                                     |        |represent the frame |
    |                                     |        |delimiters as       |
-   |                                     |        |4-byte sequences    |
+   |                                     |        |4-octet sequences   |
    |                                     |        |representing the    |
    |                                     |        |corresponding       |
    |                                     |        |ordered sets, with  |
    |                                     |        |K28.5 represented   |
    |                                     |        |as 0xBC, and the D  |
    |                                     |        |symbols as the      |
-   |                                     |        |corresponding byte  |
+   |                                     |        |corresponding octet |
    |                                     |        |values; for         |
    |                                     |        |example, SOFi2,     |
    |                                     |        |which is K28.5 -    |
