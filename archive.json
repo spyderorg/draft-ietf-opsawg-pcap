@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-26T01:08:50.076872+00:00",
+  "timestamp": "2023-12-28T01:09:08.771141+00:00",
   "repo": "IETF-OPSAWG-WG/draft-ietf-opsawg-pcap",
   "labels": [
     {
@@ -2302,6 +2302,58 @@
           "body": "All RFCs retrieved a few months ago:\r\n```\r\n$ grep -i -r 'timestamp' $(find ../RFC-all -iname '*.txt')|wc -l\r\n12636\r\n$ grep -i -r 'time stamp' $(find ../RFC-all -iname '*.txt')|wc -l\r\n543\r\n```\r\n",
           "createdAt": "2023-08-17T11:00:14Z",
           "updatedAt": "2023-08-17T11:01:39Z"
+        }
+      ]
+    },
+    {
+      "number": 149,
+      "id": "I_kwDOAU54e856lFpQ",
+      "title": "Any reason to use octet and byte? consistency?",
+      "url": "https://github.com/IETF-OPSAWG-WG/draft-ietf-opsawg-pcap/issues/149",
+      "state": "OPEN",
+      "author": "fxlb",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "$ git grep -c octet '*.md'                                                      \r\ndraft-ietf-opsawg-pcap.md:13\r\ndraft-ietf-opsawg-pcaplinktype.md:4\r\ndraft-ietf-opsawg-pcapng.md:70\r\ndraft-richardson-opsawg-pcapng-extras.md:5\r\n\r\n$ git grep -c byte '*.md'                                      \r\ndraft-ietf-opsawg-pcap.md:2\r\ndraft-ietf-opsawg-pcaplinktype.md:11\r\ndraft-ietf-opsawg-pcapng.md:9\r\n",
+      "createdAt": "2023-12-26T16:23:22Z",
+      "updatedAt": "2023-12-26T18:13:43Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "guyharris",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> draft-ietf-opsawg-pcap.md:2\r\n\r\nOne is in the phrase \"byte order\"; that's a sufficiently commonly-used phrase that using it rather than \"octet order\" might be justified.\r\n\r\nThe other is in the phrase \"magic bytes\", referring to the magic number at the beginning of the file. That should probably just refer, as is done elsewhere, to the Magic Number field in the File Header; fixed in 83a26b05e2f3384e2aeaeceeb38b9ca62de18deb",
+          "createdAt": "2023-12-26T17:28:50Z",
+          "updatedAt": "2023-12-26T17:28:50Z"
+        },
+        {
+          "author": "fxlb",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> One is in the phrase \"byte order\"; that's a sufficiently commonly-used phrase that using it rather than \"octet order\" might be justified.\r\n\r\nIn RFCs there are 1597 `byte order` and 32 `octet order`. Less use indeed but not unused. Thus why not change to `octet order`?\r\n\r\n> ... Magic Number ...\r\n\r\n+1",
+          "createdAt": "2023-12-26T17:53:17Z",
+          "updatedAt": "2023-12-26T17:53:17Z"
+        },
+        {
+          "author": "guyharris",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> draft-ietf-opsawg-pcapng.md:9\r\n\r\nMany of those are in the phrase \"byte order\" or the field name \"Byte-Order Magic\"; the suggestion made for \"byte order\" in the pcap format applies here as well. (I hyphenated one case where that field was referred to as the \"Byte Order Magic\" field rather than the \"Byte-Order Magic\" field.)\r\n\r\nOne other is in the phrase \"magic bytes\"; for pcapng files, that refers to the Block Type and Byte-Order Magic fields in the Section Header Block at the beginning of the file, so I've updated that in the pcapng spec, in a fashion similar to the way I updated the similar text in the pcap format I-D, in efeca01485ef19744d923495f2cbd7c943005bcf.\r\n\r\nOthers are just cases where \"byte\" means \"octet\"; I've changed those in efeca01485ef19744d923495f2cbd7c943005bcf.",
+          "createdAt": "2023-12-26T17:53:41Z",
+          "updatedAt": "2023-12-26T17:53:41Z"
+        },
+        {
+          "author": "guyharris",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> draft-ietf-opsawg-pcapng.md\r\n\r\nA mix of \"byte order\" and other text using \"byte\" I've changed the latter in c2a09853c130058499c15349fea865ca5f6956f8.  (This includes \"byte-stuffed\"; [RFC 1662](https://datatracker.ietf.org/doc/html/rfc1662) uses \"octet-stuffed\", so, now, so do we.)",
+          "createdAt": "2023-12-26T18:10:10Z",
+          "updatedAt": "2023-12-26T18:10:10Z"
+        },
+        {
+          "author": "guyharris",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> In RFCs there are 1597 byte order and 32 octet order. Less use indeed but not unused. Thus why not change to octet order?\r\n\r\nAnd then there's https://developers.google.com/nearby/fast-pair/specifications/introduction#OctetOrder, which says\r\n\r\n> Octet order\r\n> \r\n> Wherever a field consists of multiple bytes, the byte ordering is big-endian, that is, network byte order (most-significant octet to least-significant octet).\r\n> \r\n> Note that while this is standard for bytes transferred over networks, it is different from the byte ordering for multi-byte fields in Bluetooth SIG specifications (for example, a service UUID in an advertisement is little-endian).\r\n\r\nso Google can't make up their mind. :-)",
+          "createdAt": "2023-12-26T18:13:42Z",
+          "updatedAt": "2023-12-26T18:13:42Z"
         }
       ]
     }
@@ -8117,6 +8169,34 @@
           "updatedAt": "2023-11-22T21:21:38Z"
         }
       ],
+      "reviews": []
+    },
+    {
+      "number": 150,
+      "id": "PR_kwDOAU54e85iylZK",
+      "title": "Fix a typo",
+      "url": "https://github.com/IETF-OPSAWG-WG/draft-ietf-opsawg-pcap/pull/150",
+      "state": "MERGED",
+      "author": "fxlb",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Found with:\r\ncodespell $(git ls-files '*.md')",
+      "createdAt": "2023-12-26T18:31:21Z",
+      "updatedAt": "2023-12-26T18:39:54Z",
+      "baseRepository": "IETF-OPSAWG-WG/draft-ietf-opsawg-pcap",
+      "baseRefName": "master",
+      "baseRefOid": "c2a09853c130058499c15349fea865ca5f6956f8",
+      "headRepository": "fxlb/pcapng",
+      "headRefName": "typo",
+      "headRefOid": "879cc454f2be6eb7bdfad4762aa8cfda4718c2ad",
+      "closedAt": "2023-12-26T18:37:39Z",
+      "mergedAt": "2023-12-26T18:37:39Z",
+      "mergedBy": "guyharris",
+      "mergeCommit": {
+        "oid": "89cfeb0bca6458f361aa0c562a9d0333d7381344"
+      },
+      "comments": [],
       "reviews": []
     }
   ]
