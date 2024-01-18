@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-16T01:12:48.833375+00:00",
+  "timestamp": "2024-01-18T01:12:45.935636+00:00",
   "repo": "IETF-OPSAWG-WG/draft-ietf-opsawg-pcap",
   "labels": [
     {
@@ -2356,6 +2356,22 @@
           "updatedAt": "2023-12-26T18:13:42Z"
         }
       ]
+    },
+    {
+      "number": 151,
+      "id": "I_kwDOAU54e858N9tX",
+      "title": "Should we keep the two texts '32-bit' versus '32 bits'? (and others 16, 64, ... )",
+      "url": "https://github.com/IETF-OPSAWG-WG/draft-ietf-opsawg-pcap/issues/151",
+      "state": "OPEN",
+      "author": "fxlb",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "`git grep -nE '([0-9]-bit|[0-9] bit)' '*.md'` shows them.\r\n\r\n",
+      "createdAt": "2024-01-16T14:03:12Z",
+      "updatedAt": "2024-01-16T14:19:52Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
