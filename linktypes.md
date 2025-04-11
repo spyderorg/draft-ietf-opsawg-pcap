@@ -227,7 +227,7 @@ Description
 : LLC/SNAP-encapsulated ATM
 
 Reference
-: {{?RFC1483}}
+: {{LINKTYPE_ATM_RFC1483}}
 {: spacing="compact"}
 
 
@@ -408,6 +408,9 @@ Number
 
 Description
 : Apple LocalTalk
+
+Reference
+: {{LINKTYPE_LTALK}}
 {: spacing="compact"}
 
 

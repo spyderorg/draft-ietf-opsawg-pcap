@@ -169,6 +169,11 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_APPLE_IP_OVER_IEEE1394.html
 
+  LINKTYPE_ATM_RFC1483:
+    title: LINKTYPE_ATM_RFC1483
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_ATM_RFC1483.html
+
   LINKTYPE_AX25:
     title: LINKTYPE_AX25
     date: false
@@ -393,6 +398,11 @@ informative:
     title: LINKTYPE_LORATAP
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_LORATAP.html
+
+  LINKTYPE_LTALK:
+    title: LINKTYPE_LTALK
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_LTALK.html
 
   LINKTYPE_MDB:
     title: LINKTYPE_MDB

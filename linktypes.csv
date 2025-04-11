@@ -14,7 +14,7 @@
 |LINKTYPE_PPP_ETHER|51|PPPoE|{{Section 4 of ?RFC2516}}
 |Reserved|52-98|Do not use these values|
 |LINKTYPE_SYMANTEC_FIREWALL|99|Reserved for Symantec Enterprise Firewall|
-|LINKTYPE_ATM_RFC1483|100|LLC/SNAP-encapsulated ATM|{{?RFC1483}}
+|LINKTYPE_ATM_RFC1483|100|LLC/SNAP-encapsulated ATM|{{LINKTYPE_ATM_RFC1483}}
 |LINKTYPE_RAW|101|Raw IP; begins with an IPv4 or IPv6 header|
 |LINKTYPE_SLIP_BSDOS|102|Reserved for BSD/OS SLIP BPF header|
 |LINKTYPE_PPP_BSDOS|103|Reserved for BSD/OS PPP BPF header|
@@ -28,7 +28,7 @@
 |LINKTYPE_HIPPI|111|Reserved for NetBSD HIPPI|
 |LINKTYPE_HDLC|112|Reserved for NetBSD HDLC framing|
 |LINKTYPE_LINUX_SLL|113|"Linux ""cooked"" capture encapsulation"|{{LINKTYPE_LINUX_SLL}}
-|LINKTYPE_LTALK|114|Apple LocalTalk|
+|LINKTYPE_LTALK|114|Apple LocalTalk|{{LINKTYPE_LTALK}}
 |LINKTYPE_ECONET|115|Reserved for Acorn Econet|
 |LINKTYPE_IPFILTER|116|Reserved for OpenBSD ipfilter|
 |LINKTYPE_PFLOG|117|"OpenBSD pflog; ""struct pfloghdr"" structure"|
