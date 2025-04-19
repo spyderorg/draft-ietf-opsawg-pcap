@@ -57,12 +57,6 @@ informative:
     date: false
     refcontent: 3GPP TS 04.64
 
-  A/330:
-    title: >
-      ATSC 3.0 System
-    refcontent: ATSC Standard A/300
-    target: https://www.atsc.org/atsc-documents/type/3-0-standards/
-
   AIM-628:
     author:
     - fullname: David A. Moon
@@ -71,13 +65,6 @@ informative:
     date: June 1981
     refcontent: MIT A.I. Memo No. 628
     target: http://www.bitsavers.org/pdf/mit/ai/AIM-628_chaosnet.pdf
-
-  ASHRAE-135:
-    title: >
-      BACnet(TM): A Data Communication Protocol for Building Automation
-      and Control Networks
-    date: false
-    refcontent: ANSI/ASHRAE Standard 135
 
   ATA-878.1-1999:
     title: ATA 878.1 - 1999 Local Area Network - Token Bus
@@ -112,13 +99,6 @@ informative:
     refcontent: ARCNET Trade Association draft standard 878.2
     target: https://web.archive.org/web/20100414154914/http://www.arcnet.com/resources/ata8782.pdf
 
-  DVB-CI:
-    title: >
-      Common Interface Specification for Conditional Access and other
-      Digital Video Broadcasting Decoder Applications
-    date: false
-    target: https://dvb.org/?standard=common-interface-specification-for-conditional-access-and-other-digital-video-broadcasting-decoder-applications
-
   DVB-CI-PCAP:
     title: PCAP format for DVB-CI
     author:
@@ -126,17 +106,12 @@ informative:
       ins: M. Kaiser
       org: ""
     date: January 2, 2021
-    target: https://www.kaiser.cx/pcap-dvbci/
+    target: https://www.kaiser.cx/posts/pcap-dvbci/
 
   EBHSCR:
     title: Documentation EBHSCR
     date: false
     target: http://www.elektrobit.com/ebhscr
-
-  ERF:
-    title: ERF Types Reference Guide
-    date: false
-    target: https://www.endace.com/erf-extensible-record-format-types.pdf
 
   Exegin-802.15.4-TAP:
     title: IEEE 802.15.4 TAP Link Type Specification
@@ -169,6 +144,16 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_APPLE_IP_OVER_IEEE1394.html
 
+  LINKTYPE_ATM_RFC1483:
+    title: LINKTYPE_ATM_RFC1483
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_ATM_RFC1483.html
+
+  LINKTYPE_ATSC_ALP:
+    title: LINKTYPE_ATSC_ALP
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_ATSC_ALP.html
+
   LINKTYPE_AX25:
     title: LINKTYPE_AX25
     date: false
@@ -178,6 +163,11 @@ informative:
     title: LINKTYPE_AX25_KISS
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_AX25_KISS.html
+
+  LINKTYPE_BACNET_MS_TP:
+    title: LINKTYPE_BACNET_MS_TP
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_BACNET_MS_TP.html
 
   LINKTYPE_BLUETOOTH_BREDR_BB:
     title: LINKTYPE_BLUETOOTH_BREDR_BB
@@ -264,6 +254,11 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_EPON.html
 
+  LINKTYPE_ERF:
+    title: LINKTYPE_ERF
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_ERF.html
+
   LINKTYPE_ETW:
     title: LINKTYPE_ETW
     date: false
@@ -328,6 +323,11 @@ informative:
     title: LINKTYPE_IEEE802_15_4_WITHFCS
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_IEEE802_15_4_WITHFCS.html
+
+  LINKTYPE_IPOIB:
+    title: LINKTYPE_IPOIB
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_IPOIB.html
 
   LINKTYPE_IP_OVER_FC:
     title: LINKTYPE_IP_OVER_FC
@@ -394,10 +394,10 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_LORATAP.html
 
-  LINKTYPE_MDB:
-    title: LINKTYPE_MDB
+  LINKTYPE_LTALK:
+    title: LINKTYPE_LTALK
     date: false
-    target: https://www.tcpdump.org/linktypes/LINKTYPE_MDB.html
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_LTALK.html
 
   LINKTYPE_MFR:
     title: LINKTYPE_MFR
@@ -418,6 +418,16 @@ informative:
     title: LINKTYPE_MTP2_WITH_PHDR
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_MTP2_WITH_PHDR.html
+
+  LINKTYPE_MTP3:
+    title: LINKTYPE_MTP3
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_MTP3.html
+
+  LINKTYPE_SCCP:
+    title: LINKTYPE_SCCP
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_SCCP.html
 
   LINKTYPE_MUX27010:
     title: LINKTYPE_MUX27010
@@ -479,10 +489,20 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_PPP.html
 
+  LINKTYPE_PPP_ETHER:
+    title: LINKTYPE_PPP_ETHER
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_PPP_ETHER.html
+
   LINKTYPE_PPP_HDLC:
     title: LINKTYPE_PPP_HDLC
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_PPP_HDLC.html
+
+  LINKTYPE_PPP_PPPD:
+    title: LINKTYPE_PPP_PPPD
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_PPP_PPPD.html
 
   LINKTYPE_PPP_WITH_DIR:
     title: LINKTYPE_PPP_WITH_DIR
@@ -529,6 +549,26 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_SUNATM.html
 
+  LINKTYPE_USB_2_0:
+    title: LINKTYPE_USB_2_0
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_USB_2_0.html
+
+  LINKTYPE_USB_2_0_FULL_SPEED:
+    title: LINKTYPE_USB_2_0_FULL_SPEED
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_USB_2_0_FULL_SPEED.html
+
+  LINKTYPE_USB_2_0_HIGH_SPEED:
+    title: LINKTYPE_USB_2_0_HIGH_SPEED
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_USB_2_0_HIGH_SPEED.html
+
+  LINKTYPE_USB_2_0_LOW_SPEED:
+    title: LINKTYPE_USB_2_0_LOW_SPEED
+    date: false
+    target: https://www.tcpdump.org/linktypes/LINKTYPE_USB_2_0_LOW_SPEED.html
+
   LINKTYPE_USB_DARWIN:
     title: LINKTYPE_USB_DARWIN
     date: false
@@ -574,6 +614,15 @@ informative:
     date: false
     target: https://www.tcpdump.org/linktypes/LINKTYPE_ZWAVE_TAP.html
 
+  MDB-PCAP:
+    title: PCAP format for MDB
+    author:
+    - fullname: Martin Kaiser
+      ins: M. Kaiser
+      org: ""
+    date: August 7, 2023
+    target: https://www.kaiser.cx/posts/pcap-mdb/
+
   OpenVizsla:
     title: OpenVizsla protocol description
     date: August 22, 2018
@@ -588,46 +637,6 @@ informative:
     - fullname: Edward A. Taft
       org: Xerox Palo Alto Research Center
     target: http://bitsavers.org/pdf/xerox/ethernet_3mb/Practical_Considerations_in_Ethernet_Local_Network_Design_Feb1980.pdf
-
-  Q.704:
-    title: >
-      Specifications of Signalling System No. 7
-      Signalling Network Functions And Messages
-    refcontent: ITU-T Recommendation Q.704
-    date: false
-    target: https://www.itu.int/rec/T-REC-Q.704/en/
-
-  Q.711:
-    title: >
-      Specifications of Signalling System No. 7
-      Functional description of the signalling connection control part
-    refcontent: ITU-T Recommendation Q.711
-    date: false
-    target: https://www.itu.int/rec/T-REC-Q.711/en/
-
-  Q.712:
-    title: >
-      Specifications of Signalling System No. 7
-      Definition and function of signalling connection control part messages
-    refcontent: ITU-T Recommendation Q.712
-    date: false
-    target: https://www.itu.int/rec/T-REC-Q.712/en/
-
-  Q.713:
-    title: >
-      Specifications of Signalling System No. 7
-      Signalling connection control part functions and codes
-    refcontent: ITU-T Recommendation Q.713
-    date: false
-    target: https://www.itu.int/rec/T-REC-Q.713/en/
-
-  Q.714:
-    title: >
-      Specifications of Signalling System No. 7
-      Signalling connection control part procedures
-    refcontent: ITU-T Recommendation Q.714
-    date: false
-    target: https://www.itu.int/rec/T-REC-Q.714/en/
 
   Radiotap:
     author:
@@ -646,11 +655,6 @@ informative:
     refcontent: STANAG 5066
     date: false
     target: https://web.archive.org/web/20051004082010/http://www.armymars.net/ArmyMARS/HF-Email/resources/stanag5066.pdf
-
-  USB-2.0:
-    title: Universal Serial Bus Specification Revision 2.0
-    date: April 27, 2000
-    target: https://www.usb.org/document-library/usb-20-specification
 
   USBPcap:
     title: USBPcap Capture format specification

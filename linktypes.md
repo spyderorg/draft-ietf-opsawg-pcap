@@ -185,10 +185,10 @@ Number
 : 51
 
 Description
-: PPPoE
+: PPPoE session packets
 
 Reference
-: {{Section 4 of ?RFC2516}}
+: {{LINKTYPE_PPP_ETHER}}
 {: spacing="compact"}
 
 
@@ -227,7 +227,7 @@ Description
 : LLC/SNAP-encapsulated ATM
 
 Reference
-: {{?RFC1483}}
+: {{LINKTYPE_ATM_RFC1483}}
 {: spacing="compact"}
 
 
@@ -408,6 +408,9 @@ Number
 
 Description
 : Apple LocalTalk
+
+Reference
+: {{LINKTYPE_LTALK}}
 {: spacing="compact"}
 
 
@@ -443,7 +446,7 @@ Number
 : 117
 
 Description
-: OpenBSD pflog; "struct pfloghdr" structure
+: Reserved for PF packet filter logging
 {: spacing="compact"}
 
 
@@ -467,7 +470,7 @@ Number
 : 119
 
 Description
-: Prism monitor mode
+: IEEE 802.11 wireless LAN, preceded by a Prism monitor mode header
 
 Reference
 : {{LINKTYPE_IEEE802_11_PRISM}}
@@ -572,7 +575,7 @@ Number
 : 127
 
 Description
-: Radiotap header, followed by an 802.11 header
+: IEEE 802.11 wireless LAN, preceded by a Radiotap header
 
 Reference
 : {{Radiotap}}
@@ -740,7 +743,7 @@ Number
 : 140
 
 Description
-: SS7 MTP2 frames
+: SS7 MTP2 packets
 
 Reference
 : {{LINKTYPE_MTP2}}
@@ -755,10 +758,10 @@ Number
 : 141
 
 Description
-: SS7 MTP Level 3, with no MTP2 header
+: SS7 MTP3 packets
 
 Reference
-: {{Q.704}}
+: {{LINKTYPE_MTP3}}
 {: spacing="compact"}
 
 
@@ -770,10 +773,10 @@ Number
 : 142
 
 Description
-: SS7 Control Part, with no MTP3 or MTP2 header
+: SS7 SCCP packets
 
 Reference
-: {{Q.711}} {{Q.712}} {{Q.713}} {{Q.714}}
+: {{LINKTYPE_SCCP}}
 {: spacing="compact"}
 
 
@@ -1031,7 +1034,7 @@ Number
 : 163
 
 Description
-: AVS header, followed by an 802.11 header
+: IEEE 802.11 wireless LAN, preceded by an AVS header
 
 Reference
 : {{AVS}}
@@ -1061,7 +1064,7 @@ Description
 : BACnet MS/TP frames
 
 Reference
-: Section 9.3 MS/TP Frame Format of {{ASHRAE-135}}
+: {{LINKTYPE_BACNET_MS_TP}}
 {: spacing="compact"}
 
 
@@ -1073,7 +1076,10 @@ Number
 : 166
 
 Description
-: PPP in HDLC-like encapsulation, like LINKTYPE_PPP_HDLC, different stuffing
+: PPP preceded by a direction octet and an HDLC-like control field
+
+Reference
+: {{LINKTYPE_PPP_PPPD}}
 {: spacing="compact"}
 
 
@@ -1190,7 +1196,10 @@ Number
 : 175
 
 Description
-: Endace ERF header followed by 802.3 Ethernet
+: Endace TYPE_ETH ERF records
+
+Reference
+: {{LINKTYPE_ERF}}
 {: spacing="compact"}
 
 
@@ -1202,7 +1211,10 @@ Number
 : 176
 
 Description
-: Endace ERF header followed by Packet-over-SONET
+: Endace TYPE_POS_HDLC ERF records
+
+Reference
+: {{LINKTYPE_ERF}}
 {: spacing="compact"}
 
 
@@ -1328,7 +1340,7 @@ Number
 : 186
 
 Description
-: USB packets, beginning with a FreeBSD USB header
+: Reserved for USB traffic captured on FreeBSD
 {: spacing="compact"}
 
 
@@ -1445,7 +1457,7 @@ Number
 : 195
 
 Description
-: IEEE 802.15.4 packets with FCS
+: IEEE 802.15.4 with FCS
 
 Reference
 : {{LINKTYPE_IEEE802_15_4_WITHFCS}}
@@ -1478,7 +1490,7 @@ Description
 : Endace ERF records
 
 Reference
-: {{ERF}}
+: {{LINKTYPE_ERF}}
 {: spacing="compact"}
 
 
@@ -1922,7 +1934,7 @@ Number
 : 230
 
 Description
-: IEEE 802.15.4 packets without FCS
+: IEEE 802.15.4 without FCS
 
 Reference
 : {{LINKTYPE_IEEE802_15_4_NOFCS}}
@@ -1988,10 +2000,10 @@ Number
 : 235
 
 Description
-: DVB-CI messages
+: DVB-CI messages, with a pseudo-header
 
 Reference
-: {{DVB-CI-PCAP}}{{DVB-CI}}
+: {{DVB-CI-PCAP}}
 {: spacing="compact"}
 
 
@@ -2093,7 +2105,7 @@ Description
 : IP-over-InfiniBand
 
 Reference
-: {{Section 6 of ?RFC4391}}
+: {{LINKTYPE_IPOIB}}
 {: spacing="compact"}
 
 
@@ -2180,7 +2192,7 @@ Description
 : SCTP packets, with no lower-level protocols such as IPv4 or IPv6
 
 Reference
-: {{?RFC4960}}
+: {{?RFC9260}}
 {: spacing="compact"}
 
 
@@ -2690,7 +2702,7 @@ Number
 : 283
 
 Description
-: IEEE 802.15.4 packets, with a tap header preceding the 802.15.4 header
+: IEEE 802.15.4 with a tap header preceding it
 
 Reference
 : {{Exegin-802.15.4-TAP}}
@@ -2762,7 +2774,10 @@ Number
 : 288
 
 Description
-: USB 2.0, 1.1, or 1.0 packet, beginning with a PID, as described by Chapter 8 Protocol Layer of the the Universal Serial Bus Specification Revision 2.0
+: USB 2.0, 1.1, or 1.0 packets
+
+Reference
+: {{LINKTYPE_USB_2_0}}
 {: spacing="compact"}
 
 
@@ -2774,7 +2789,10 @@ Number
 : 289
 
 Description
-: ATSC Link-Layer Protocol frames, as described in section 5 of the {{A/330}} Link-Layer Protocol specification, beginning with a Base Header
+: ATSC Link-Layer Protocol frames
+
+Reference
+: {{LINKTYPE_ATSC_ALP}}
 {: spacing="compact"}
 
 
@@ -2828,7 +2846,10 @@ Number
 : 293
 
 Description
-: Low-Speed USB 2.0, 1.1, or 1.0 packet, beginning with a PID, as described by Chapter 8 "Protocol Layer" of {{USB-2.0}}
+: Low-Speed USB 2.0, 1.1, or 1.0 packets
+
+Reference
+: {{LINKTYPE_USB_2_0_LOW_SPEED}}
 {: spacing="compact"}
 
 
@@ -2840,7 +2861,10 @@ Number
 : 294
 
 Description
-: Full-Speed USB 2.0, 1.1, or 1.0 packet, beginning with a PID, as described by Chapter 8 "Protocol Layer" of {{USB-2.0}}
+: Full-Speed USB 2.0, 1.1, or 1.0 packets
+
+Reference
+: {{LINKTYPE_USB_2_0_FULL_SPEED}}
 {: spacing="compact"}
 
 
@@ -2852,7 +2876,10 @@ Number
 : 295
 
 Description
-: High-Speed USB 2.0 packet, beginning with a PID, as described by Chapter 8 "Protocol Layer" of {{USB-2.0}}
+: High-Speed USB 2.0 packets
+
+Reference
+: {{LINKTYPE_USB_2_0_HIGH_SPEED}}
 {: spacing="compact"}
 
 
@@ -2864,7 +2891,10 @@ Number
 : 296
 
 Description
-: Auerswald Logger Protocol, as described in {{Auerswald-Logger}}
+: Auerswald Logger Protocol
+
+Reference
+: {{Auerswald-Logger}}
 {: spacing="compact"}
 
 
@@ -2921,10 +2951,10 @@ Number
 : 300
 
 Description
-: MDB (Multi-Drop Bus) vending machine protocol
+: MDB (Multi-Drop Bus) protocol
 
 Reference
-: {{LINKTYPE_MDB}}
+: {{MDB-PCAP}}
 {: spacing="compact"}
 
 
